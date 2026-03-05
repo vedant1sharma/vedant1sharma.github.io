@@ -1292,7 +1292,7 @@
           healthcare, biotech, and HR-tech.
         </p> -->
         <p class="hero-desc">
-          <span id="typed-text"></span><span id="typed-cursor" style="color:var(--accent); animation: blink 1s infinite;">|</span>
+          <span id="typed-text" style="white-space: pre-line;"></span><span id="typed-cursor" style="color:var(--accent); animation: blink 1s infinite;">|</span>
         </p>
         <div class="hero-ctas">
           <a href="#contact" class="btn-primary">Get in touch ↗</a>
@@ -1318,7 +1318,7 @@
           <div class="hero-card-label">// career stats</div>
           <div class="stat-row">
             <span class="stat-label">Years of experience</span>
-            <span class="stat-value" data-target="4">0<span>yrs</span></span>
+            <span class="stat-value" data-target="5">0<span>yrs</span></span>
           </div>
           <div class="stat-row">
             <span class="stat-label">Query time reduced</span>
@@ -1695,16 +1695,20 @@
             Enterprise Platform — handling real-time device state, API-driven
             workflows, and HMI dashboards for plant-floor operators.
           </p>
-          <div class="highlight-metrics" style="margin-bottom: 24px">
-            <div class="metric">
-              <span class="metric-val">RT</span>
-              <span class="metric-label">Real-time Ops</span>
-            </div>
-            <div class="metric">
-              <span class="metric-val">E2E</span>
-              <span class="metric-label">API Ownership</span>
+          <div>
+            <span class="highlight-tag">Impact</span>
+            <div class="highlight-metrics" style="margin-bottom: 24px">
+              <div class="metric">
+                <span class="metric-val">RT</span>
+                <span class="metric-label">Real-time Ops</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val">E2E</span>
+                <span class="metric-label">API Ownership</span>
+              </div>
             </div>
           </div>
+          
           <div class="highlight-stack">
             <span class="stack-tag">Java</span>
             <span class="stack-tag">SQL</span>
@@ -2233,30 +2237,22 @@
       }
 
       // Typing animation
-      const typedStrings = [
-        'Lead Software Engineer with 4+ years crafting high-performance backends.',
-        'Building event-driven systems across healthcare and biotech.',
-        'AI/ML post-grad student by day, guitarist and gamer by night.',
-      ];
-      let strIndex = 0, charIndex = 0, isDeleting = false;
+      // Typing animation
+      const fullText = 
+        'Lead Software Engineer with 4+ years crafting high-performance backends.\n' +
+        'Building event-driven systems across healthcare and biotech.\n' +
+        'AI/ML grad student by day, guitarist and gamer by night.';
+
+      let charIndex = 0;
       function type() {
         const el = document.getElementById('typed-text');
-        const current = typedStrings[strIndex];
-        if (isDeleting) {
-          el.textContent = current.substring(0, charIndex--);
+        if (charIndex <= fullText.length) {
+          el.textContent = fullText.substring(0, charIndex++);
+          setTimeout(type, 45);
         } else {
-          el.textContent = current.substring(0, charIndex++);
+          // Hide cursor after done
+          document.getElementById('typed-cursor').style.display = 'none';
         }
-        let delay = isDeleting ? 30 : 55;
-        if (!isDeleting && charIndex === current.length + 1) {
-          delay = 2000;
-          isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-          isDeleting = false;
-          strIndex = (strIndex + 1) % typedStrings.length;
-          delay = 400;
-        }
-        setTimeout(type, delay);
       }
       type();
 
