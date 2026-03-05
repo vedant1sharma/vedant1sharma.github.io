@@ -70,6 +70,22 @@
         opacity: 0.5;
       }
 
+      .cursor-particle {
+        position: fixed;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--accent);
+        pointer-events: none;
+        z-index: 9996;
+        transform: translate(-50%, -50%);
+        animation: particle-fade 0.6s ease forwards;
+      }
+      @keyframes particle-fade {
+        0%   { opacity: 0.8; transform: translate(-50%, -50%) scale(1); }
+        100% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+      }
+
       /* Noise texture overlay */
       body::before {
         content: "";
@@ -95,6 +111,9 @@
         border-bottom: 1px solid transparent;
         transition: border-color 0.3s, background 0.3s;
       }
+
+      
+
       nav.scrolled {
         border-color: var(--border);
         background: rgba(10, 10, 10, 0.9);
@@ -139,6 +158,14 @@
       }
       .nav-links a:hover::after {
         width: 100%;
+      }
+
+      .nav-links a.active {
+        color: var(--accent);
+      }
+      .nav-links a.active::after {
+        width: 100%;
+        background: var(--accent);
       }
 
       /* HERO */
@@ -712,6 +739,305 @@
         text-transform: uppercase;
       }
 
+      /* BEYOND CODE */
+      #beyond {
+        background: var(--bg);
+      }
+
+      .beyond-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+      }
+
+      .beyond-card {
+        background: var(--surface);
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+        transition: background 0.3s;
+      }
+      .beyond-card:hover {
+        background: var(--surface2);
+      }
+
+      .beyond-card-label {
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 20px;
+      }
+
+      .beyond-title {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        line-height: 1.1;
+        margin-bottom: 16px;
+      }
+
+      .beyond-desc {
+        color: var(--muted2);
+        font-size: 13px;
+        line-height: 1.9;
+        margin-bottom: 32px;
+      }
+
+      /* CURRENTLY */
+      #currently {
+        background: var(--surface);
+      }
+
+      .currently-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2px;
+      }
+
+      .currently-card {
+        background: var(--bg);
+        padding: 32px;
+        position: relative;
+        overflow: hidden;
+        transition: background 0.3s;
+      }
+      .currently-card:hover {
+        background: var(--surface2);
+      }
+      .currently-card::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--accent);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+        transform-origin: left;
+      }
+      .currently-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .currently-icon {
+        font-size: 28px;
+        margin-bottom: 16px;
+        display: block;
+      }
+      .currently-label {
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 10px;
+      }
+      .currently-value {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 1.4;
+        margin-bottom: 8px;
+      }
+      .currently-sub {
+        font-size: 11px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      @media (max-width: 900px) {
+        .currently-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .tracker-card {
+        border: 1px solid var(--border);
+        padding: 20px;
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        transition: border-color 0.2s;
+        text-decoration: none;
+      }
+      .tracker-card:hover {
+        border-color: var(--accent);
+      }
+      .tracker-game {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      .tracker-sub {
+        font-size: 11px;
+        color: var(--muted);
+      }
+      .tracker-cta {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        white-space: nowrap;
+      }
+
+      /* DISCOGRAPHY */
+      .discography {
+        margin-top: 32px;
+      }
+      .release-card {
+        border: 1px solid var(--border);
+        padding: 24px;
+        display: grid;
+        grid-template-columns: 80px 1fr auto;
+        gap: 24px;
+        align-items: center;
+        margin-bottom: 2px;
+        transition: border-color 0.2s, background 0.2s;
+      }
+      .release-card:hover {
+        border-color: var(--muted);
+        background: var(--surface2);
+      }
+      .release-art {
+        width: 80px;
+        height: 80px;
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        flex-shrink: 0;
+      }
+      .release-name {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        margin-bottom: 4px;
+      }
+      .release-meta {
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .release-stream-links {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .release-stream-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border: 1px solid var(--border);
+        padding: 5px 12px;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted2);
+        text-decoration: none;
+        transition: border-color 0.2s, color 0.2s;
+      }
+      .release-stream-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      @media (max-width: 900px) {
+        .discography iframe {
+          height: 280px;
+          border-radius: 8px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .discography iframe {
+          height: 240px;
+          border-radius: 6px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .release-card {
+          grid-template-columns: 60px 1fr;
+        }
+        .release-stream-links {
+          display: none;
+        }
+      }
+
+      .game-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .game-row:last-of-type {
+        border-bottom: none;
+      }
+
+      .game-name {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .game-links {
+        display: flex;
+        gap: 10px;
+      }
+
+      .game-link {
+        border: 1px solid var(--border);
+        padding: 5px 12px;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted2);
+        text-decoration: none;
+        transition: border-color 0.2s, color 0.2s;
+      }
+      .game-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .band-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 8px;
+      }
+
+      .band-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--border);
+        padding: 10px 18px;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted2);
+        text-decoration: none;
+        transition: border-color 0.2s, color 0.2s;
+      }
+      .band-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      @media (max-width: 900px) {
+        .beyond-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       /* CONTACT */
       #contact {
         background: var(--bg);
@@ -811,9 +1137,10 @@
         body {
           cursor: auto;
         }
-        
-        .cursor, .cursor-ring {
-          display: none; 
+
+        .cursor,
+        .cursor-ring {
+          display: none;
         }
 
         nav {
@@ -832,6 +1159,10 @@
         }
         section {
           padding: 80px 24px;
+        }
+
+        .exp-tab.active {
+          border-color: var(--accent) !important;
         }
         .exp-grid {
           grid-template-columns: 1fr;
@@ -914,6 +1245,19 @@
     </style>
   </head>
   <body>
+    <div
+      id="progress-bar"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background: var(--accent);
+        z-index: 9999;
+        transition: width 0.1s linear;
+      "
+    ></div>
     <div class="cursor" id="cursor"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
@@ -924,6 +1268,9 @@
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#highlights">Highlights</a>
+        <a href="#education">Education</a>
+        <a href="#currently">Currently</a>
+        <a href="#beyond">Beyond</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -939,14 +1286,30 @@
           Available for opportunities
         </div>
         <h1>Vedant<br /><em>Sharma.</em></h1>
-        <p class="hero-desc">
+        <!-- <p class="hero-desc">
           Lead Software Engineer with 4+ years crafting high-performance
           backends, event-driven systems, and AI-integrated platforms across
           healthcare, biotech, and HR-tech.
+        </p> -->
+        <p class="hero-desc">
+          <span id="typed-text"></span><span id="typed-cursor" style="color:var(--accent); animation: blink 1s infinite;">|</span>
         </p>
         <div class="hero-ctas">
           <a href="#contact" class="btn-primary">Get in touch ↗</a>
           <a href="#experience" class="btn-ghost">View work →</a>
+          <a href="VedantSharmaResume2026.pdf" download class="btn-ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              style="flex-shrink: 0"
+            >
+              <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4h14v-2H5v2z" />
+            </svg>
+            Resume
+          </a>
         </div>
       </div>
 
@@ -955,20 +1318,21 @@
           <div class="hero-card-label">// career stats</div>
           <div class="stat-row">
             <span class="stat-label">Years of experience</span>
-            <span class="stat-value">4+<span>yrs</span></span>
+            <span class="stat-value" data-target="4">0<span>yrs</span></span>
           </div>
           <div class="stat-row">
             <span class="stat-label">Query time reduced</span>
-            <span class="stat-value">40<span>%</span></span>
+            <span class="stat-value" data-target="40">0<span>%</span></span>
           </div>
           <div class="stat-row">
             <span class="stat-label">Platform uptime maintained</span>
-            <span class="stat-value">99<span>%</span></span>
+            <span class="stat-value" data-target="99">0<span>%</span></span>
           </div>
           <div class="stat-row">
             <span class="stat-label">Compliance findings</span>
-            <span class="stat-value">0<span>issues</span></span>
+            <span class="stat-value" data-target="0">0<span> issues</span></span>
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -1375,6 +1739,282 @@
       </div>
     </section>
 
+    <!-- CURRENTLY -->
+    <section id="currently">
+      <div class="section-header reveal">
+        <span class="section-num">05</span>
+        <h2>Currently</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="currently-grid reveal">
+        <div class="currently-card">
+          <span class="currently-icon">🎓</span>
+          <div class="currently-label">// Learning</div>
+          <div class="currently-value">M.Tech in AI & ML</div>
+          <div class="currently-sub">
+            Pursuing a postgraduate degree in Artificial Intelligence and
+            Machine Learning.
+          </div>
+        </div>
+        <div class="currently-card">
+          <span class="currently-icon">🎧</span>
+          <div class="currently-label">// Listening</div>
+          <div class="currently-value">
+            Meshuggah, Leprous & Dillinger Escape Plan
+          </div>
+          <div class="currently-sub">
+            Progressive metal and mathcore on repeat.
+          </div>
+        </div>
+        <div class="currently-card">
+          <span class="currently-icon">🎮</span>
+          <div class="currently-label">// Playing</div>
+          <div class="currently-value">Valorant</div>
+          <div class="currently-sub">Grinding ranked. Riot ID: ANGERY#070</div>
+        </div>
+        <div class="currently-card">
+          <span class="currently-icon">📖</span>
+          <div class="currently-label">// Reading</div>
+          <div class="currently-value">Thinking, Fast and Slow</div>
+          <div class="currently-sub">
+            Daniel Kahneman — on intuition, bias, and decision-making.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEYOND CODE -->
+    <section id="beyond">
+      <div class="section-header reveal">
+        <span class="section-num">06</span>
+        <h2>Beyond Code</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="beyond-grid reveal">
+        <!-- Gaming -->
+        <div class="beyond-card">
+          <div class="beyond-card-label">// Gaming</div>
+          <div class="beyond-title">Competitive<br />Gaming</div>
+          <p class="beyond-desc">
+            When I'm not shipping code, I'm grinding ranked. I play
+            Counter-Strike and Valorant competitively — the same instincts that
+            make a good engineer make a good teammate: game sense,
+            communication, and staying calm under pressure.
+          </p>
+
+          <a
+            href="https://tracker.gg/valorant/profile/riot/ANGERY%23070"
+            target="_blank"
+            class="tracker-card"
+          >
+            <div>
+              <div class="tracker-game">Valorant</div>
+              <div class="tracker-sub">
+                Riot ID: ANGERY#070 · View live stats on Tracker.gg
+              </div>
+            </div>
+            <span class="tracker-cta">View Stats ↗</span>
+          </a>
+
+          <a
+            href="https://steamcommunity.com/id/YOURID"
+            target="_blank"
+            class="tracker-card"
+          >
+            <div>
+              <div class="tracker-game">Counter-Strike 2</div>
+              <div class="tracker-sub">View profile on Steam</div>
+            </div>
+            <span class="tracker-cta">Steam Profile ↗</span>
+          </a>
+
+          <a
+            href="https://psnprofiles.com/angery070"
+            target="_blank"
+            class="tracker-card"
+          >
+            <div>
+              <div class="tracker-game">PlayStation 5</div>
+              <div class="tracker-sub">
+                PSN ID: angery070 · View profile on PSN Profiles
+              </div>
+            </div>
+            <span class="tracker-cta">PSN Profile ↗</span>
+          </a>
+        </div>
+
+        <!-- Music -->
+        <div class="beyond-card">
+          <div class="beyond-card-label">// Music</div>
+          <div class="beyond-title">The Eclectic<br />Experience</div>
+          <p class="beyond-desc">
+            I'm part of The Eclectic Experience — a band that blends genres and
+            defies easy categorisation. Music has always been the other language
+            I think in, and the band is where creativity has no constraints.
+            Check us out on your platform of choice.
+          </p>
+
+          <div class="discography">
+            <iframe
+              src="https://open.spotify.com/embed/artist/1aUeZArhZyNIhdtUteCJe7?utm_source=generator&theme=0"
+              width="100%"
+              height="352"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              style="display: block; border-radius: 12px"
+            >
+            </iframe>
+          </div>
+
+          <!-- <div class="discography">
+            <div class="release-card">
+              <div class="release-art">🪐</div>
+              <div>
+                <div class="release-name">Saturnus</div>
+                <div class="release-meta">Album · 2019</div>
+                <div class="release-stream-links">
+                  <a
+                    href="https://open.spotify.com/artist/1aUeZArhZyNIhdtUteCJe7"
+                    target="_blank"
+                    class="release-stream-link"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="11"
+                      height="11"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+                      />
+                    </svg>
+                    Spotify
+                  </a>
+                  <a
+                    href="https://music.apple.com/us/artist/the-eclectic-experience/1463058192"
+                    target="_blank"
+                    class="release-stream-link"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="11"
+                      height="11"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.54 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"
+                      />
+                    </svg>
+                    Apple Music
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@TheEclecticExperience"
+                    target="_blank"
+                    class="release-stream-link"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="11"
+                      height="11"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"
+                      />
+                    </svg>
+                    YouTube
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="band-links">
+            <a
+              href="https://open.spotify.com/artist/1aUeZArhZyNIhdtUteCJe7"
+              target="_blank"
+              class="band-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+                />
+              </svg>
+              Spotify
+            </a>
+            <!-- https://music.apple.com/us/artist/the-eclectic-experience/1463058192 -->
+            <a
+              href="https://music.apple.com/us/artist/the-eclectic-experience/1463058192"
+              target="_blank"
+              class="band-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.54 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"
+                />
+              </svg>
+              Apple Music
+            </a>
+            <a
+              href="https://www.youtube.com/@TheEclecticExperience"
+              target="_blank"
+              class="band-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"
+                />
+              </svg>
+              YouTube
+            </a>
+            <a
+              href="https://www.instagram.com/theeclecticexperience/"
+              target="_blank"
+              class="band-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                />
+              </svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section id="contact">
       <div class="contact-glow"></div>
@@ -1385,7 +2025,9 @@
         out directly or find me on the platforms below.
       </p>
       <div class="contact-links">
-        <a href="mailto:vedant1998@gmail.com" class="contact-link">✉ Email</a>
+        <button onclick="copyEmail()" class="contact-link" id="email-btn" style="background:none; font-family:'DM Mono',monospace;">
+          ✉ Email
+        </button>
         <!-- <a href="https://linkedin.com/in/v3dantsharma" target="_blank" class="contact-link">in LinkedIn</a> -->
         <a
           href="https://linkedin.com/in/v3dantsharma"
@@ -1446,6 +2088,19 @@
           </svg>
           Whatsapp
         </a>
+        <a href="VedantSharmaResume2026.pdf" download class="contact-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            style="flex-shrink: 0"
+          >
+            <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4h14v-2H5v2z" />
+          </svg>
+          Resume
+        </a>
       </div>
     </section>
 
@@ -1505,6 +2160,133 @@
       document
         .querySelectorAll(".reveal")
         .forEach((el) => observer.observe(el));
+
+      // Scroll progress bar
+      window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const docHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        document.getElementById("progress-bar").style.width = progress + "%";
+      });
+
+      // Counter animations
+      const counters = document.querySelectorAll('.stat-value[data-target]');
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = +el.getAttribute('data-target');
+            const suffix = el.querySelector('span').outerHTML;
+            const duration = 1500;
+            const step = target / (duration / 16);
+            let current = 0;
+            const timer = setInterval(() => {
+              current += step;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              el.innerHTML = Math.floor(current) + suffix;
+            }, 16);
+            counterObserver.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(c => counterObserver.observe(c));
+
+      // Active nav highlight
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + entry.target.id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+      sections.forEach(s => sectionObserver.observe(s));
+
+      // Back to top
+      const backToTop = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        backToTop.style.display = window.scrollY > 600 ? 'flex' : 'none';
+      });
+      // Copy email to clipboard
+      function copyEmail() {
+        navigator.clipboard.writeText('vedant1998@gmail.com');
+        const btn = document.getElementById('email-btn');
+        const original = btn.innerHTML;
+        btn.innerHTML = '✓ Copied!';
+        btn.style.borderColor = 'var(--accent)';
+        btn.style.color = 'var(--accent)';
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.style.borderColor = '';
+          btn.style.color = '';
+        }, 2000);
+      }
+
+      // Typing animation
+      const typedStrings = [
+        'Lead Software Engineer with 4+ years crafting high-performance backends.',
+        'Building event-driven systems across healthcare and biotech.',
+        'AI/ML post-grad student by day, guitarist and gamer by night.',
+      ];
+      let strIndex = 0, charIndex = 0, isDeleting = false;
+      function type() {
+        const el = document.getElementById('typed-text');
+        const current = typedStrings[strIndex];
+        if (isDeleting) {
+          el.textContent = current.substring(0, charIndex--);
+        } else {
+          el.textContent = current.substring(0, charIndex++);
+        }
+        let delay = isDeleting ? 30 : 55;
+        if (!isDeleting && charIndex === current.length + 1) {
+          delay = 2000;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          strIndex = (strIndex + 1) % typedStrings.length;
+          delay = 400;
+        }
+        setTimeout(type, delay);
+      }
+      type();
+
+      // Cursor trail
+      document.addEventListener('mousemove', (e) => {
+        const particle = document.createElement('div');
+        particle.classList.add('cursor-particle');
+        particle.style.left = e.clientX + 'px';
+        particle.style.top = e.clientY + 'px';
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 600);
+      });
     </script>
+    <button id="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        width: 44px;
+        height: 44px;
+        background: var(--accent);
+        color: #000;
+        border: none;
+        cursor: none;
+        font-size: 18px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+        transition: transform 0.2s, box-shadow 0.2s;
+      " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 24px rgba(200,240,78,0.3)'"
+     onmouseout="this.style.transform=''; this.style.boxShadow=''">↑</button>
   </body>
 </html>
