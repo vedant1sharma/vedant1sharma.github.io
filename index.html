@@ -261,9 +261,15 @@
         }
       }
 
-      .hero-left {
+      /* .hero-left {
         position: relative;
         z-index: 2;
+      } */
+
+      .hero-left { 
+        position: relative; 
+        z-index: 2;
+        min-height: 520px;
       }
 
       .hero-badge {
@@ -310,6 +316,15 @@
         color: var(--accent);
       }
 
+      /* .hero-desc {
+        color: var(--muted2);
+        font-size: 14px;
+        line-height: 1.8;
+        max-width: 480px;
+        margin-bottom: 48px;
+        animation: fadeUp 0.8s 0.2s ease both;
+      } */
+
       .hero-desc {
         color: var(--muted2);
         font-size: 14px;
@@ -317,6 +332,8 @@
         max-width: 480px;
         margin-bottom: 48px;
         animation: fadeUp 0.8s 0.2s ease both;
+        min-height: 80px;
+        display: block;
       }
 
       .hero-ctas {
@@ -587,8 +604,11 @@
         overflow: hidden;
         transition: background 0.3s;
       }
-      .skill-cell:hover {
+      .skill-cell:hover { 
         background: var(--surface2);
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+        transform: translateY(-2px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
       }
       .skill-cell::before {
         content: "";
@@ -650,6 +670,9 @@
       }
       .highlight-card:hover {
         background: var(--surface2);
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+        transform: translateY(-2px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
       }
       .highlight-card:first-child {
         grid-column: span 2;
@@ -792,8 +815,11 @@
         overflow: hidden;
         transition: background 0.3s;
       }
-      .beyond-card:hover {
+      .beyond-card:hover { 
         background: var(--surface2);
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+        transform: translateY(-2px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
       }
 
       .beyond-card-label {
@@ -836,8 +862,11 @@
         overflow: hidden;
         transition: background 0.3s;
       }
-      .currently-card:hover {
+      .currently-card:hover { 
         background: var(--surface2);
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+        transform: translateY(-2px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
       }
       .currently-card::before {
         content: "";
@@ -1378,7 +1407,10 @@
           backends, event-driven systems, and AI-integrated platforms across
           healthcare, biotech, and HR-tech.
         </p> -->
-        <p class="hero-desc">
+        <!-- <p class="hero-desc">
+          <span id="typed-text" style="white-space: pre-line;"></span><span id="typed-cursor" style="color:var(--accent); animation: blink 1s infinite;">|</span>
+        </p> -->
+        <p class="hero-desc" style="min-height: 80px;">
           <span id="typed-text" style="white-space: pre-line;"></span><span id="typed-cursor" style="color:var(--accent); animation: blink 1s infinite;">|</span>
         </p>
         <div class="hero-ctas">
