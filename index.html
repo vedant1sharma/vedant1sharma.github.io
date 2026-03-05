@@ -70,7 +70,23 @@
         opacity: 0.5;
       }
 
-      .cursor-particle {
+      .touch-particle {
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(200,240,78,0.35) 0%, rgba(200,240,78,0.1) 40%, transparent 70%);
+        pointer-events: none;
+        z-index: 9990;
+        transform: translate(-50%, -50%) scale(0.5);
+        animation: touch-fade 0.9s ease forwards;
+      }
+      @keyframes touch-fade {
+        0%   { opacity: 1; transform: translate(-50%, -50%) scale(0.5); }
+        100% { opacity: 0; transform: translate(-50%, -50%) scale(1.8); }
+      }
+
+      /* .cursor-particle {
         position: fixed;
         width: 4px;
         height: 4px;
@@ -84,7 +100,7 @@
       @keyframes particle-fade {
         0%   { opacity: 0.8; transform: translate(-50%, -50%) scale(1); }
         100% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
-      }
+      } */
 
       /* Noise texture overlay */
       body::before {
@@ -2255,16 +2271,36 @@
         }
       }
       type();
+      
+      // Touch ripple effect (mobile only)
+      document.addEventListener('touchstart', (e) => {
+        Array.from(e.touches).forEach(touch => {
+          const particle = document.createElement('div');
+          particle.classList.add('touch-particle');
+          particle.style.left = touch.clientX + 'px';
+          particle.style.top = touch.clientY + 'px';
+          document.body.appendChild(particle);
+          setTimeout(() => particle.remove(), 800);
+        });
+      });
 
       // Cursor trail
-      document.addEventListener('mousemove', (e) => {
-        const particle = document.createElement('div');
-        particle.classList.add('cursor-particle');
-        particle.style.left = e.clientX + 'px';
-        particle.style.top = e.clientY + 'px';
-        document.body.appendChild(particle);
-        setTimeout(() => particle.remove(), 600);
-      });
+      // let lastX = 0, lastY = 0;
+      // document.addEventListener('mousemove', (e) => {
+      //   // Only spawn particle if cursor moved enough
+      //   if (Math.abs(e.clientX - lastX) < 5 && Math.abs(e.clientY - lastY) < 5) return;
+      //   lastX = e.clientX;
+      //   lastY = e.clientY;
+
+      //   const particle = document.createElement('div');
+      //   particle.classList.add('cursor-particle');
+      //   particle.style.left = e.clientX + 'px';
+      //   particle.style.top = e.clientY + 'px';
+      //   particle.style.pointerEvents = 'none';
+      //   particle.style.zIndex = '9990'; // below cursor and ring
+      //   document.body.appendChild(particle);
+      //   setTimeout(() => particle.remove(), 600);
+      // });
     </script>
     <button id="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="
         position: fixed;
