@@ -2229,6 +2229,11 @@
 
     <footer>
       <span>© 2026 Vedant Sharma</span>
+      <span style="display:flex; align-items:center; gap:8px; color:var(--muted); font-size:11px; letter-spacing:0.08em;">
+        <span style="color:var(--accent);">⬡</span>
+        <span id="visit-count">—</span>
+        <span style="text-transform:uppercase;">visitors</span>
+      </span>
       <span>Lead Software Engineer · Bhopal, India</span>
     </footer>
 
@@ -2417,6 +2422,20 @@
           setTimeout(() => particle.remove(), 800);
         });
       });
+
+      // Visitor counter
+      fetch('https://hits.sh/vedant1sharma.github.io.svg')
+        .then(res => res.text())
+        .then(svg => {
+          const match = svg.match(/>(\d+)<\/text>/g);
+          if (match) {
+            const count = match[match.length - 1].replace(/<\/?[^>]+(>|$)/g, '');
+            document.getElementById('visit-count').textContent = Number(count).toLocaleString();
+          }
+        })
+        .catch(() => {
+          document.getElementById('visit-count').textContent = '—';
+        });
 
       // Cursor trail
       // let lastX = 0, lastY = 0;
