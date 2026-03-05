@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <title>Vedant Sharma — Lead Software Engineer</title>
+    <meta name="description" content="Lead Software Engineer with 4+ years building high-performance backends, event-driven systems, and AI-integrated platforms across healthcare, biotech, and HR-tech. Based in Bhopal, India." />
+    <meta name="keywords" content="Vedant Sharma, Software Engineer, Java, Spring Boot, Kafka, Elasticsearch, Backend Developer, Bhopal, India" />
+    <meta name="author" content="Vedant Sharma" />
+
+    <!-- Open Graph — controls how link looks when shared on LinkedIn, WhatsApp etc. -->
+    <meta property="og:title" content="Vedant Sharma — Lead Software Engineer" />
+    <meta property="og:description" content="Lead Software Engineer with 4+ years building high-performance backends and AI-integrated platforms. Top Talent @ Persistent Systems 2023 & 2024." />
+    <meta property="og:url" content="https://vedant1sharma.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://vedant1sharma.github.io/og-image.png" />
+
+    <!-- Twitter/X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vedant Sharma — Lead Software Engineer" />
+    <meta name="twitter:description" content="Lead Software Engineer with 4+ years building high-performance backends and AI-integrated platforms." />
+    <meta name="twitter:image" content="https://vedant1sharma.github.io/og-image.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://vedant1sharma.github.io/" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap"
       rel="stylesheet"
@@ -1261,6 +1280,58 @@
     </style>
   </head>
   <body>
+    
+    <!-- Page loader -->
+    <div id="loader" style="
+    position: fixed;
+    inset: 0;
+    background: #0a0a0a;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    ">
+    <div id="loader-name" style="
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 8vw, 80px);
+      letter-spacing: -2px;
+      color: #f0ede6;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    ">Vedant <em style="color:#c8f04e; font-style:italic;">Sharma.</em></div>
+    <div id="loader-role" style="
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #666;
+      margin-top: 16px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+    ">Lead Software Engineer</div>
+    <div id="loader-bar-wrap" style="
+      margin-top: 48px;
+      width: 200px;
+      height: 1px;
+      background: #222;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.4s ease 0.5s;
+    ">
+      <div id="loader-bar" style="
+        height: 100%;
+        width: 0%;
+        background: #c8f04e;
+        transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      "></div>
+    </div>
+    </div>
+
+
     <div
       id="progress-bar"
       style="
@@ -2130,6 +2201,37 @@
     </footer>
 
     <script>
+
+      // Page load animation
+      window.addEventListener('DOMContentLoaded', () => {
+        const loader = document.getElementById('loader');
+        const loaderName = document.getElementById('loader-name');
+        const loaderRole = document.getElementById('loader-role');
+        const loaderBarWrap = document.getElementById('loader-bar-wrap');
+        const loaderBar = document.getElementById('loader-bar');
+
+        // Fade in name and role
+        requestAnimationFrame(() => {
+          loaderName.style.opacity = '1';
+          loaderName.style.transform = 'translateY(0)';
+          loaderRole.style.opacity = '1';
+          loaderRole.style.transform = 'translateY(0)';
+          loaderBarWrap.style.opacity = '1';
+        });
+
+        // Start progress bar
+        setTimeout(() => {
+          loaderBar.style.width = '100%';
+        }, 100);
+
+        // Sweep away
+        setTimeout(() => {
+          loader.style.opacity = '0';
+          loader.style.transform = 'translateY(-100%)';
+          setTimeout(() => loader.remove(), 600);
+        }, 1800);
+      });
+
       // Custom cursor
       const cursor = document.getElementById("cursor");
       const ring = document.getElementById("cursorRing");
@@ -2257,7 +2359,7 @@
       const fullText = 
         'Lead Software Engineer with 4+ years crafting high-performance backends.\n' +
         'Building event-driven systems across healthcare and biotech.\n' +
-        'AI/ML grad student by day, guitarist and gamer by night.';
+        'AI/ML post-grad student by day, guitarist and gamer by night.';
 
       let charIndex = 0;
       function type() {
