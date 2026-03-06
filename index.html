@@ -62,6 +62,200 @@
         overflow-x: hidden;
         cursor: none;
       }
+      
+      body.light {
+        --bg: #faf7f2;
+        --surface: #f2ede4;
+        --surface2: #e8e1d6;
+        --border: #d6cdc0;
+        --text: #1a1510;
+        --muted: #9a8f82;
+        --muted2: #6b5f52;
+        --accent: #c4612a;
+        --accent2: #9b6abf;
+      }
+
+      /* Loader */
+      body.light #loader {
+        background: #faf7f2;
+      }
+      body.light #loader-name {
+        color: #1a1510;
+      }
+      body.light #loader-name em {
+        color: #c4612a;
+      }
+      body.light #loader-role {
+        color: #9a8f82;
+      }
+      body.light #loader-bar-wrap {
+        background: #d6cdc0;
+      }
+      body.light #loader-bar {
+        background: #c4612a;
+      }
+
+      /* Navbar */
+      body.light nav {
+        background: rgba(250, 247, 242, 0.95) !important;
+        border-color: var(--border);
+      }
+      body.light nav.scrolled {
+        background: rgba(250, 247, 242, 0.97) !important;
+        backdrop-filter: blur(12px);
+      }
+      body.light .nav-logo { color: var(--text); }
+      body.light .nav-logo span { color: var(--accent); }
+
+      /* Hero canvas */
+      /* body.light #hero-canvas { opacity: 0.25; filter: hue-rotate(180deg) saturate(0.6); } */
+      body.light #hero-canvas { opacity: 1; }
+
+      /* Hero glow */
+      body.light .hero-glow {
+        background: radial-gradient(circle, rgba(196, 97, 42, 0.08) 0%, transparent 70%);
+      }
+
+      /* Hero card top line */
+      body.light .hero-card::before { background: var(--accent); }
+
+      /* Hero badge dot */
+      body.light .hero-badge .dot { background: var(--accent); }
+
+      /* Btn primary */
+      body.light .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+      body.light .btn-primary:hover {
+        box-shadow: 0 8px 32px rgba(196, 97, 42, 0.3);
+      }
+
+      /* Scroll progress bar */
+      body.light #progress-bar { background: var(--accent); }
+
+      /* Back to top button */
+      body.light #back-to-top { background: var(--accent); }
+
+      /* Section numbers */
+      body.light .section-num { color: var(--accent); }
+
+      /* Exp project line */
+      body.light .exp-project { color: var(--accent); }
+
+      /* Active tab dot */
+      body.light .exp-tab.active::after { background: var(--accent); }
+      body.light .exp-tab.active { border-color: var(--accent) !important; }
+
+      /* Skill cat label */
+      body.light .skill-cat { color: var(--accent); }
+
+      /* Currently card accent line */
+      body.light .currently-card::before { background: var(--accent); }
+
+      /* Beyond card label */
+      body.light .beyond-card-label { color: var(--accent); }
+
+      /* Tracker cards */
+      body.light .tracker-card { border-color: var(--border); }
+      body.light .tracker-cta { color: var(--accent); }
+
+      /* Education card bottom line */
+      body.light .edu-card::before {
+        background: linear-gradient(90deg, var(--accent), transparent);
+      }
+
+      /* Contact glow */
+      body.light .contact-glow {
+        background: radial-gradient(ellipse, rgba(196,97,42,0.06) 0%, transparent 70%);
+      }
+
+      /* Loader */
+      body.light #loader { background: #faf7f2; }
+
+      /* Spotify iframe */
+      body.light .discography iframe {
+        border-radius: 12px;
+        opacity: 0.92;
+      }
+
+      /* ===================== */
+      /* AWARD CARD */
+      /* ===================== */
+      #award-card {
+        background: linear-gradient(135deg, #0d1800 0%, #111111 60%);
+      }
+      body.light #award-card {
+        background: linear-gradient(135deg, #fef3e2 0%, #faebd7 60%) !important;
+        border: 2px solid rgba(196, 97, 42, 0.5) !important;
+      }
+      body.light #award-card .highlight-tag {
+        color: #c4612a !important;
+        border-color: rgba(196, 97, 42, 0.4) !important;
+        background: rgba(196, 97, 42, 0.08) !important;
+      }
+      body.light #award-card .highlight-title { color: var(--text) !important; }
+      body.light #award-card .highlight-desc { color: var(--muted2) !important; }
+      body.light #award-card .metric-val { color: #c4612a !important; }
+      body.light #award-card .metric-label { color: var(--muted) !important; }
+      body.light #award-card > div > div[style] {
+        border-color: rgba(196, 97, 42, 0.3) !important;
+        background: rgba(196, 97, 42, 0.05) !important;
+      }
+      body.light #award-card div[style*="Syne"] {
+        color: var(--text) !important;
+      }
+
+      /* ===================== */
+      /* PATENT CARD */
+      /* ===================== */
+      body.light #patent-card {
+        background: linear-gradient(135deg, #fde8e8 0%, #f9dede 60%) !important;
+        border: 2px solid rgba(217, 79, 79, 0.5) !important;
+      }
+      body.light #patent-card .highlight-tag {
+        color: #d94f4f !important;
+        border-color: rgba(217, 79, 79, 0.4) !important;
+        background: rgba(217, 79, 79, 0.08) !important;
+      }
+      body.light #patent-card .highlight-title { color: var(--text) !important; }
+      body.light #patent-card .highlight-desc { color: var(--muted2) !important; }
+      body.light #patent-card .highlight-desc span { color: #d94f4f !important; }
+      body.light #patent-card .metric-val { color: #d94f4f !important; }
+      body.light #patent-card .metric-label { color: var(--muted) !important; }
+      body.light #patent-card .stack-tag {
+        color: #d94f4f !important;
+        border-color: rgba(217, 79, 79, 0.3) !important;
+        background: rgba(217, 79, 79, 0.05) !important;
+      }
+
+      /* ===================== */
+      /* PUBLICATION CARD */
+      /* ===================== */
+      body.light #publication-card {
+        background: linear-gradient(135deg, #fde8f3 0%, #f9deed 60%) !important;
+        border: 2px solid rgba(217, 79, 143, 0.5) !important;
+      }
+      body.light #publication-card .highlight-tag {
+        color: #d94f8f !important;
+        border-color: rgba(217, 79, 143, 0.4) !important;
+        background: rgba(217, 79, 143, 0.08) !important;
+      }
+      body.light #publication-card .highlight-title { color: var(--text) !important; }
+      body.light #publication-card .highlight-desc { color: var(--muted2) !important; }
+      body.light #publication-card .highlight-desc span { color: #d94f8f !important; }
+      body.light #publication-card .metric-val { color: #d94f8f !important; }
+      body.light #publication-card .metric-label { color: var(--muted) !important; }
+      body.light #publication-card a {
+        color: #d94f8f !important;
+        border-color: rgba(217, 79, 143, 0.4) !important;
+        background: rgba(217, 79, 143, 0.05) !important;
+      }
+      body.light #publication-card .stack-tag {
+        color: #d94f8f !important;
+        border-color: rgba(217, 79, 143, 0.3) !important;
+        background: rgba(217, 79, 143, 0.05) !important;
+      }
 
       /* Custom cursor */
       .cursor {
@@ -89,7 +283,7 @@
         opacity: 0.5;
       }
 
-      .touch-particle {
+      /* .touch-particle {
         position: fixed;
         width: 30px;
         height: 30px;
@@ -103,7 +297,7 @@
       @keyframes touch-fade {
         0%   { opacity: 1; transform: translate(-50%, -50%) scale(0.5); }
         100% { opacity: 0; transform: translate(-50%, -50%) scale(1.8); }
-      }
+      } */
 
       /* .cursor-particle {
         position: fixed;
@@ -1312,53 +1506,71 @@
     
     <!-- Page loader -->
     <div id="loader" style="
-    position: fixed;
-    inset: 0;
-    background: #0a0a0a;
-    z-index: 99999;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    ">
-    <div id="loader-name" style="
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(36px, 8vw, 80px);
-      letter-spacing: -2px;
-      color: #f0ede6;
-      opacity: 0;
-      transform: translateY(20px);
+      position: fixed;
+      inset: 0;
+      background: #0a0a0a;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       transition: opacity 0.6s ease, transform 0.6s ease;
-    ">Vedant <em style="color:#c8f04e; font-style:italic;">Sharma.</em></div>
-    <div id="loader-role" style="
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: #666;
-      margin-top: 16px;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
-    ">Lead Software Engineer</div>
-    <div id="loader-bar-wrap" style="
-      margin-top: 48px;
-      width: 200px;
-      height: 1px;
-      background: #222;
-      overflow: hidden;
-      opacity: 0;
-      transition: opacity 0.4s ease 0.5s;
     ">
-      <div id="loader-bar" style="
-        height: 100%;
-        width: 0%;
-        background: #c8f04e;
-        transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-      "></div>
+      <div id="loader-name" style="
+        font-family: 'DM Serif Display', serif;
+        font-size: clamp(36px, 8vw, 80px);
+        letter-spacing: -2px;
+        color: #f0ede6;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      ">Vedant <em style="color:#c8f04e; font-style:italic;">Sharma.</em></div>
+      <div id="loader-role" style="
+        font-family: 'DM Mono', monospace;
+        font-size: 12px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #666;
+        margin-top: 16px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+      ">Lead Software Engineer</div>
+      <div id="loader-bar-wrap" style="
+        margin-top: 48px;
+        width: 200px;
+        height: 1px;
+        background: #222;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 0.4s ease 0.5s;
+      ">
+        <div id="loader-bar" style="
+          height: 100%;
+          width: 0%;
+          background: #c8f04e;
+          transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        "></div>
+      </div>
     </div>
-    </div>
+
+    <script>
+      // Apply light mode to loader immediately before page renders
+      if (localStorage.getItem('theme') === 'light') {
+        const loader = document.getElementById('loader');
+        const loaderName = document.getElementById('loader-name');
+        const loaderNameEm = loaderName.querySelector('em');
+        const loaderRole = document.getElementById('loader-role');
+        const loaderBarWrap = document.getElementById('loader-bar-wrap');
+        const loaderBar = document.getElementById('loader-bar');
+        loader.style.background = '#faf7f2';
+        loaderName.style.color = '#1a1510';
+        loaderNameEm.style.color = '#c4612a';
+        loaderRole.style.color = '#9a8f82';
+        loaderBarWrap.style.background = '#d6cdc0';
+        loaderBar.style.background = '#c4612a';
+      }
+    </script>
 
 
     <div
@@ -1389,6 +1601,21 @@
         <a href="#beyond">Beyond</a>
         <a href="#contact">Contact</a>
       </div>
+      <button id="theme-toggle" onclick="toggleTheme()" style="
+        background: none;
+        border: 1px solid var(--border);
+        color: var(--muted2);
+        font-family: 'DM Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 6px 14px;
+        cursor: none;
+        transition: border-color 0.2s, color 0.2s;
+      " onmouseover="this.style.borderColor='var(--accent)'; this.style.color='var(--accent)'"
+        onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--muted2)'">
+        ☀ Light
+      </button>
     </nav>
 
     <!-- HERO -->
@@ -1743,7 +1970,7 @@
           </div>
         </div> -->
 
-        <div class="highlight-card" style="grid-column: span 2; display: grid; grid-template-columns: auto 1fr auto; gap: 48px; align-items: center; background: linear-gradient(135deg, #0d1800 0%, #111111 60%) !important; border: 1px solid rgba(200,240,78,0.25);">
+        <div id="award-card" class="highlight-card" style="grid-column: span 2; display: grid; grid-template-columns: auto 1fr auto; gap: 48px; align-items: center; border: 1px solid rgba(200,240,78,0.25);">
           <div style="font-size: 64px; line-height: 1; filter: drop-shadow(0 0 24px rgba(200,240,78,0.5));">🏆</div>
           <div>
             <span class="highlight-tag">Recognition · Persistent Systems</span>
@@ -1784,7 +2011,7 @@
           </div>
         </div>
 
-        <div class="highlight-card" style="background: linear-gradient(135deg, #0a0f1a 0%, #111111 60%); border: 1px solid rgba(78, 176, 240, 0.2);">
+        <div id="award-card" class="highlight-card" style="background: linear-gradient(135deg, #0a0f1a 0%, #111111 60%); border: 1px solid rgba(78, 176, 240, 0.2);">
           <span class="highlight-tag" style="color: #4eb0f0; border-color: rgba(78,176,240,0.3);">Patent · Govt. of India · 2025</span>
           <div class="highlight-title">360° Rotating Smart<br/>Drying Stand</div>
           <p class="highlight-desc">A portable, weatherproof clothes drying stand featuring automated rain detection and 360° auto-rotation — engineered to protect laundry from weather without manual intervention. <span style="color: #4eb0f0;">Certified by The Patent Office, Government of India.</span></p>
@@ -1814,7 +2041,7 @@
           </div>
         </div>
 
-        <div class="highlight-card" style="background: linear-gradient(135deg, #0f0a1a 0%, #111111 60%); border: 1px solid rgba(176, 78, 240, 0.2);">
+        <div id="award-card" class="highlight-card" style="background: linear-gradient(135deg, #0f0a1a 0%, #111111 60%); border: 1px solid rgba(176, 78, 240, 0.2);">
           <span class="highlight-tag" style="color: #b04ef0; border-color: rgba(176,78,240,0.3);">Research Publication · 2018</span>
           <div class="highlight-title">Secret Image Sharing Over Cloud Using One-Dimensional Chaotic Map</div>
           <p class="highlight-desc">Published in <span style="color: #b04ef0;">Data, Engineering and Applications — Volume 2</span> (Springer), a compilation of current trends, technologies, and challenges in Big Data. The paper presents a cryptographic approach to secure image sharing over cloud infrastructure using chaotic map theory.</p>
@@ -2513,32 +2740,68 @@
         }
       }
       type();
-      
-      // Touch ripple effect (mobile only)
-      document.addEventListener('touchstart', (e) => {
-        Array.from(e.touches).forEach(touch => {
-          const particle = document.createElement('div');
-          particle.classList.add('touch-particle');
-          particle.style.left = touch.clientX + 'px';
-          particle.style.top = touch.clientY + 'px';
-          document.body.appendChild(particle);
-          setTimeout(() => particle.remove(), 800);
-        });
-      });
 
-      // Visitor counter
-      fetch('https://hits.sh/vedant1sharma.github.io.svg')
-        .then(res => res.text())
-        .then(svg => {
-          const match = svg.match(/>(\d+)<\/text>/g);
-          if (match) {
-            const count = match[match.length - 1].replace(/<\/?[^>]+(>|$)/g, '');
-            document.getElementById('visit-count').textContent = Number(count).toLocaleString();
-          }
-        })
-        .catch(() => {
-          document.getElementById('visit-count').textContent = '—';
-        });
+      // Theme toggle
+      // function toggleTheme() {
+      //   const body = document.body;
+      //   const btn = document.getElementById('theme-toggle');
+      //   body.classList.toggle('light');
+      //   const isLight = body.classList.contains('light');
+      //   btn.innerHTML = isLight ? '☾ Dark' : '☀ Light';
+      //   localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      // }
+      function toggleTheme() {
+        const body = document.body;
+        const btn = document.getElementById('theme-toggle');
+        body.classList.toggle('light');
+        const isLight = body.classList.contains('light');
+        btn.innerHTML = isLight ? '☾ Dark' : '☀ Light';
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        const cursor = document.getElementById('cursor');
+        const ring = document.getElementById('cursorRing');
+        cursor.style.background = isLight ? '#5f27e9' : '';
+        cursor.style.mixBlendMode = isLight ? 'difference' : 'difference';
+        ring.style.borderColor = isLight ? '#9b6abf' : '';
+      }
+
+      // Remember preference on reload
+      // if (localStorage.getItem('theme') === 'light') {
+      //   document.body.classList.add('light');
+      //   document.getElementById('theme-toggle').innerHTML = '☾ Dark';
+      // }
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light');
+        document.getElementById('theme-toggle').innerHTML = '☾ Dark';
+        document.getElementById('cursor').style.background = '#5f27e9';
+        document.getElementById('cursor').style.mixBlendMode = 'difference';
+        document.getElementById('cursorRing').style.borderColor = '#9b6abf';
+      }
+      
+      // // Touch ripple effect (mobile only)
+      // document.addEventListener('touchstart', (e) => {
+      //   Array.from(e.touches).forEach(touch => {
+      //     const particle = document.createElement('div');
+      //     particle.classList.add('touch-particle');
+      //     particle.style.left = touch.clientX + 'px';
+      //     particle.style.top = touch.clientY + 'px';
+      //     document.body.appendChild(particle);
+      //     setTimeout(() => particle.remove(), 800);
+      //   });
+      // });
+
+      // // Visitor counter
+      // fetch('https://hits.sh/vedant1sharma.github.io.svg')
+      //   .then(res => res.text())
+      //   .then(svg => {
+      //     const match = svg.match(/>(\d+)<\/text>/g);
+      //     if (match) {
+      //       const count = match[match.length - 1].replace(/<\/?[^>]+(>|$)/g, '');
+      //       document.getElementById('visit-count').textContent = Number(count).toLocaleString();
+      //     }
+      //   })
+      //   .catch(() => {
+      //     document.getElementById('visit-count').textContent = '—';
+      //   });
 
       // Cursor trail
       // let lastX = 0, lastY = 0;
@@ -2596,10 +2859,13 @@
       function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Grid lines
+        // Grid lines — colour switches with theme
+        const isLight = document.body.classList.contains('light');
+        const gridColor = isLight ? 'rgba(196, 97, 42,' : 'rgba(200, 240, 78,';
+
         for (let x = 0; x < canvas.width; x += spacing) {
           ctx.beginPath();
-          ctx.strokeStyle = 'rgba(200, 240, 78, 0.08)';
+          ctx.strokeStyle = `${gridColor} 0.12)`;
           ctx.lineWidth = 1;
           ctx.moveTo(x, 0);
           ctx.lineTo(x, canvas.height);
@@ -2607,7 +2873,7 @@
         }
         for (let y = 0; y < canvas.height; y += spacing) {
           ctx.beginPath();
-          ctx.strokeStyle = 'rgba(200, 240, 78, 0.08)';
+          ctx.strokeStyle = `${gridColor} 0.12)`;
           ctx.lineWidth = 1;
           ctx.moveTo(0, y);
           ctx.lineTo(canvas.width, y);
@@ -2615,29 +2881,29 @@
         }
 
         // Residual glows at intersections
+        // Residual glows at intersections
         for (let i = residuals.length - 1; i >= 0; i--) {
           const r = residuals[i];
+          const glowColor = isLight ? 'rgba(196, 97, 42,' : 'rgba(200, 240, 78,';
           const gradient = ctx.createRadialGradient(r.x, r.y, 0, r.x, r.y, r.radius * 3);
-          gradient.addColorStop(0, `rgba(200, 240, 78, ${r.alpha})`);
-          gradient.addColorStop(0.3, `rgba(200, 240, 78, ${r.alpha * 0.2})`);
+          gradient.addColorStop(0, `${glowColor} ${r.alpha})`);
+          gradient.addColorStop(0.3, `${glowColor} ${r.alpha * 0.2})`);
           gradient.addColorStop(1, 'transparent');
           ctx.fillStyle = gradient;
           ctx.beginPath();
           ctx.arc(r.x, r.y, r.radius * 3, 0, Math.PI * 2);
           ctx.fill();
 
-          //r.alpha -= 0.015;
-          //r.radius += 0.15;
           r.alpha -= 0.008;
           r.radius += 0.12;
-
           if (r.alpha <= 0) residuals.splice(i, 1);
         }
 
         // Subtle cursor glow
         if (mouseX > 0) {
+          const cursorColor = isLight ? 'rgba(196, 97, 42,' : 'rgba(200, 240, 78,';
           const glow = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 60);
-          glow.addColorStop(0, 'rgba(200, 240, 78, 0.05)');
+          glow.addColorStop(0, `${cursorColor} 0.05)`);
           glow.addColorStop(1, 'transparent');
           ctx.fillStyle = glow;
           ctx.fillRect(0, 0, canvas.width, canvas.height);
