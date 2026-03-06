@@ -1393,7 +1393,9 @@
 
     <!-- HERO -->
     <section id="hero">
-      <div class="hero-grid-lines"></div>
+      <!-- <div class="hero-grid-lines"></div> -->
+      <!-- <canvas id="hero-canvas" style="position:absolute; inset:0; width:100%; height:100%; opacity:0.4; pointer-events:none;"></canvas> -->
+      <canvas id="hero-canvas" style="position:absolute; inset:0; width:100%; height:100%; opacity:0.4; pointer-events:none;"></canvas>
       <div class="hero-glow"></div>
 
       <div class="hero-left">
@@ -1662,7 +1664,7 @@
       </div>
 
       <div class="highlights-grid reveal">
-        <div
+        <!-- <div
           class="highlight-card"
           style="
             grid-column: span 2;
@@ -1739,6 +1741,102 @@
               >
             </div>
           </div>
+        </div> -->
+
+        <div class="highlight-card" style="grid-column: span 2; display: grid; grid-template-columns: auto 1fr auto; gap: 48px; align-items: center; background: linear-gradient(135deg, #0d1800 0%, #111111 60%) !important; border: 1px solid rgba(200,240,78,0.25);">
+          <div style="font-size: 64px; line-height: 1; filter: drop-shadow(0 0 24px rgba(200,240,78,0.5));">🏆</div>
+          <div>
+            <span class="highlight-tag">Recognition · Persistent Systems</span>
+            <div class="highlight-title">Awards & Recognition</div>
+            <p class="highlight-desc">Consistently recognised at Persistent Systems for technical excellence, ownership, and team impact across multiple award categories over four years.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px;">
+              <div style="border: 1px solid rgba(200,240,78,0.2); padding: 10px 16px;">
+                <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 2px;">Top Talent</div>
+                <div style="font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">2023 · 2024</div>
+              </div>
+              <div style="border: 1px solid rgba(200,240,78,0.2); padding: 10px 16px;">
+                <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 2px;">Bravo — Individual</div>
+                <div style="font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Sept 2022</div>
+              </div>
+              <div style="border: 1px solid rgba(200,240,78,0.2); padding: 10px 16px;">
+                <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 2px;">Bravo — Individual</div>
+                <div style="font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Jan 2023</div>
+              </div>
+              <div style="border: 1px solid rgba(200,240,78,0.2); padding: 10px 16px;">
+                <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 2px;">Bravo — Team</div>
+                <div style="font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Jan 2024</div>
+              </div>
+              <div style="border: 1px solid rgba(200,240,78,0.2); padding: 10px 16px;">
+                <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 2px;">High Five</div>
+                <div style="font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">July 2025</div>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 16px; text-align: center;">
+            <div>
+              <span style="font-family: 'DM Serif Display', serif; font-size: 40px; color: var(--accent); display: block; line-height: 1; margin-bottom: 6px;">6</span>
+              <span style="font-size: 10px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase;">Awards</span>
+            </div>
+            <div>
+              <span style="font-family: 'DM Serif Display', serif; font-size: 40px; color: var(--accent); display: block; line-height: 1; margin-bottom: 6px;">4</span>
+              <span style="font-size: 10px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase;">Years</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-card" style="background: linear-gradient(135deg, #0a0f1a 0%, #111111 60%); border: 1px solid rgba(78, 176, 240, 0.2);">
+          <span class="highlight-tag" style="color: #4eb0f0; border-color: rgba(78,176,240,0.3);">Patent · Govt. of India · 2025</span>
+          <div class="highlight-title">360° Rotating Smart<br/>Drying Stand</div>
+          <p class="highlight-desc">A portable, weatherproof clothes drying stand featuring automated rain detection and 360° auto-rotation — engineered to protect laundry from weather without manual intervention. <span style="color: #4eb0f0;">Certified by The Patent Office, Government of India.</span></p>
+          <div class="highlight-metrics" style="margin-bottom: 24px;">
+            <div class="metric">
+              <span class="metric-val" style="font-size: 24px;">360°</span>
+              <span class="metric-label">Auto Rotation</span>
+            </div>
+            <div class="metric">
+              <span class="metric-val" style="font-size: 24px;">IP</span>
+              <span class="metric-label">Protected</span>
+            </div>
+            <div class="metric">
+              <span class="metric-val" style="font-size: 24px;">2025</span>
+              <span class="metric-label">Registered</span>
+            </div>
+            <div class="metric">
+              <span class="metric-val" style="font-size: 24px;">GOI</span>
+              <span class="metric-label">Certified</span>
+            </div>
+          </div>
+          <div class="highlight-stack">
+            <span class="stack-tag">IoT</span>
+            <span class="stack-tag">Embedded Systems</span>
+            <span class="stack-tag">Rain Detection</span>
+            <span class="stack-tag">Automation</span>
+          </div>
+        </div>
+
+        <div class="highlight-card" style="background: linear-gradient(135deg, #0f0a1a 0%, #111111 60%); border: 1px solid rgba(176, 78, 240, 0.2);">
+          <span class="highlight-tag" style="color: #b04ef0; border-color: rgba(176,78,240,0.3);">Research Publication · 2018</span>
+          <div class="highlight-title">Secret Image Sharing Over Cloud Using One-Dimensional Chaotic Map</div>
+          <p class="highlight-desc">Published in <span style="color: #b04ef0;">Data, Engineering and Applications — Volume 2</span> (Springer), a compilation of current trends, technologies, and challenges in Big Data. The paper presents a cryptographic approach to secure image sharing over cloud infrastructure using chaotic map theory.</p>
+          <div class="highlight-metrics" style="margin-bottom: 24px;">
+            <div class="metric">
+              <span class="metric-val" style="font-size: 24px;">2018</span>
+              <span class="metric-label">Published</span>
+            </div>
+            <div class="metric">
+              <span class="metric-val" style="font-size: 24px;">SP</span>
+              <span class="metric-label">Springer</span>
+            </div>
+          </div>
+          <div class="highlight-stack">
+            <span class="stack-tag">Cryptography</span>
+            <span class="stack-tag">Cloud Security</span>
+            <span class="stack-tag">Chaotic Maps</span>
+            <span class="stack-tag">Big Data</span>
+          </div>
+          <a href="https://link.springer.com/book/10.1007/978-981-13-6351-1" target="_blank" style="display:inline-flex; align-items:center; gap:8px; margin-top:24px; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#b04ef0; text-decoration:none; border:1px solid rgba(176,78,240,0.3); padding:8px 16px; transition: border-color 0.2s;">
+            View Publication ↗
+          </a>
         </div>
 
         <div class="highlight-card">
@@ -1942,7 +2040,7 @@
           </a>
 
           <a
-            href="https://steamcommunity.com/id/YOURID"
+            href="https://steamcommunity.com/id/ang3ry"
             target="_blank"
             class="tracker-card"
           >
@@ -1973,7 +2071,7 @@
           <div class="beyond-card-label">// Music</div>
           <div class="beyond-title">The Eclectic<br />Experience</div>
           <p class="beyond-desc">
-            I'm part of The Eclectic Experience — a band that blends genres and
+            I play guitar for The Eclectic Experience — a band that blends genres and
             defies easy categorisation. Music has always been the other language
             I think in, and the band is where creativity has no constraints.
             Check us out on your platform of choice.
@@ -2393,17 +2491,24 @@
 
       // Typing animation
       // Typing animation
+      //const fullText = 
+      //  'Lead Software Engineer with 4+ years crafting high-performance backends.\n' +
+      //  'Building event-driven systems across healthcare and biotech.\n' +
+      //  'AI/ML post-grad student by day, guitarist and gamer by night.';
+      
       const fullText = 
-        'Lead Software Engineer with 4+ years crafting high-performance backends.\n' +
-        'Building event-driven systems across healthcare and biotech.\n' +
-        'AI/ML post-grad student by day, guitarist and gamer by night.';
+      'There is a pattern to everything — \n' +
+      'In a well-designed API,\n' +
+      'a perfectly timed riff,\n' +
+      'and a clutch round.\n' +
+      'I look for it everywhere.';
 
       let charIndex = 0;
       function type() {
         const el = document.getElementById('typed-text');
         if (charIndex <= fullText.length) {
           el.textContent = fullText.substring(0, charIndex++);
-          setTimeout(type, 45);
+          setTimeout(type, 95);
         } else {
           // Hide cursor after done
           document.getElementById('typed-cursor').style.display = 'none';
@@ -2454,6 +2559,96 @@
       //   document.body.appendChild(particle);
       //   setTimeout(() => particle.remove(), 600);
       // });
+
+      // Hero canvas — grid with intersection glow
+      // Hero canvas — grid with intersection glow
+      const canvas = document.getElementById('hero-canvas');
+      const ctx = canvas.getContext('2d');
+
+      function resizeCanvas() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      let mouseX = -999, mouseY = -999;
+      const spacing = 80;
+      const residuals = [];
+
+      document.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+
+        // Check if cursor is near an intersection
+        const nearX = Math.round(mouseX / spacing) * spacing;
+        const nearY = Math.round(mouseY / spacing) * spacing;
+        const dist = Math.hypot(mouseX - nearX, mouseY - nearY);
+
+        if (dist < 12) {
+          const exists = residuals.find(r => r.x === nearX && r.y === nearY && r.alpha > 0.3);
+          if (!exists) {
+            // residuals.push({ x: nearX, y: nearY, alpha: 0.7, radius: 4 });
+            residuals.push({ x: nearX, y: nearY, alpha: 1.0, radius: 6 });
+          }
+        }
+      });
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Grid lines
+        for (let x = 0; x < canvas.width; x += spacing) {
+          ctx.beginPath();
+          ctx.strokeStyle = 'rgba(200, 240, 78, 0.08)';
+          ctx.lineWidth = 1;
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x, canvas.height);
+          ctx.stroke();
+        }
+        for (let y = 0; y < canvas.height; y += spacing) {
+          ctx.beginPath();
+          ctx.strokeStyle = 'rgba(200, 240, 78, 0.08)';
+          ctx.lineWidth = 1;
+          ctx.moveTo(0, y);
+          ctx.lineTo(canvas.width, y);
+          ctx.stroke();
+        }
+
+        // Residual glows at intersections
+        for (let i = residuals.length - 1; i >= 0; i--) {
+          const r = residuals[i];
+          const gradient = ctx.createRadialGradient(r.x, r.y, 0, r.x, r.y, r.radius * 3);
+          gradient.addColorStop(0, `rgba(200, 240, 78, ${r.alpha})`);
+          gradient.addColorStop(0.3, `rgba(200, 240, 78, ${r.alpha * 0.2})`);
+          gradient.addColorStop(1, 'transparent');
+          ctx.fillStyle = gradient;
+          ctx.beginPath();
+          ctx.arc(r.x, r.y, r.radius * 3, 0, Math.PI * 2);
+          ctx.fill();
+
+          //r.alpha -= 0.015;
+          //r.radius += 0.15;
+          r.alpha -= 0.008;
+          r.radius += 0.12;
+
+          if (r.alpha <= 0) residuals.splice(i, 1);
+        }
+
+        // Subtle cursor glow
+        if (mouseX > 0) {
+          const glow = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 60);
+          glow.addColorStop(0, 'rgba(200, 240, 78, 0.05)');
+          glow.addColorStop(1, 'transparent');
+          ctx.fillStyle = glow;
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      draw();
     </script>
     <button id="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="
         position: fixed;
