@@ -62,6 +62,11 @@
         overflow-x: hidden;
         cursor: none;
       }
+
+      #award-card {
+        background: linear-gradient(135deg, #0d1800 0%, #111111 60%);
+        border: 1px solid rgba(200, 240, 78, 0.25) !important;
+      }
       
       body.light {
         --bg: #faf7f2;
@@ -73,6 +78,16 @@
         --muted2: #6b5f52;
         --accent: #c4612a;
         --accent2: #9b6abf;
+      }
+
+      body.light #patent-card svg line,
+      body.light #patent-card svg rect,
+      body.light #patent-card svg ellipse,
+      body.light #patent-card svg circle {
+        stroke: #d94f4f !important;
+      }
+      body.light #patent-card svg circle[fill="#4eb0f0"] {
+        fill: #d94f4f !important;
       }
 
       /* Loader */
@@ -182,79 +197,158 @@
       /* ===================== */
       /* AWARD CARD */
       /* ===================== */
-      #award-card {
-        background: linear-gradient(135deg, #0d1800 0%, #111111 60%);
-      }
       body.light #award-card {
-        background: linear-gradient(135deg, #fef3e2 0%, #faebd7 60%) !important;
-        border: 2px solid rgba(196, 97, 42, 0.5) !important;
+        background: linear-gradient(135deg, #f2f5f0 0%, #edf0eb 60%) !important;
+        border: 2px solid rgba(114, 142, 98, 0.5) !important;
       }
       body.light #award-card .highlight-tag {
-        color: #c4612a !important;
-        border-color: rgba(196, 97, 42, 0.4) !important;
-        background: rgba(196, 97, 42, 0.08) !important;
+        color: #728e62 !important;
+        border-color: rgba(114, 142, 98, 0.4) !important;
+        background: rgba(114, 142, 98, 0.08) !important;
       }
-      body.light #award-card .highlight-title { color: var(--text) !important; }
-      body.light #award-card .highlight-desc { color: var(--muted2) !important; }
-      body.light #award-card .metric-val { color: #c4612a !important; }
-      body.light #award-card .metric-label { color: var(--muted) !important; }
+      body.light #award-card .highlight-title {
+        color: #1a1510 !important;
+      }
+      body.light #award-card .highlight-desc {
+        color: #6b5f52 !important;
+      }
+      body.light #award-card .metric-val {
+        color: #728e62 !important;
+      }
+      body.light #award-card .metric-label {
+        color: #9a8f82 !important;
+      }
       body.light #award-card > div > div[style] {
-        border-color: rgba(196, 97, 42, 0.3) !important;
-        background: rgba(196, 97, 42, 0.05) !important;
+        border-color: rgba(114, 142, 98, 0.2) !important;
+        background: transparent !important;
       }
       body.light #award-card div[style*="Syne"] {
-        color: var(--text) !important;
+        color: #1a1510 !important;
+      }
+      body.light #award-count,
+      body.light #award-years {
+        color: #728e62 !important;
       }
 
       /* ===================== */
       /* PATENT CARD */
       /* ===================== */
       body.light #patent-card {
-        background: linear-gradient(135deg, #fde8e8 0%, #f9dede 60%) !important;
-        border: 2px solid rgba(217, 79, 79, 0.5) !important;
+        background: linear-gradient(135deg, #edf3fc 0%, #e4ecf7 60%) !important;
+        border: 2px solid rgba(78, 130, 210, 0.5) !important;
       }
       body.light #patent-card .highlight-tag {
-        color: #d94f4f !important;
-        border-color: rgba(217, 79, 79, 0.4) !important;
-        background: rgba(217, 79, 79, 0.08) !important;
+        color: #4e82d2 !important;
+        border-color: rgba(78, 130, 210, 0.4) !important;
+        background: rgba(78, 130, 210, 0.08) !important;
       }
-      body.light #patent-card .highlight-title { color: var(--text) !important; }
-      body.light #patent-card .highlight-desc { color: var(--muted2) !important; }
-      body.light #patent-card .highlight-desc span { color: #d94f4f !important; }
-      body.light #patent-card .metric-val { color: #d94f4f !important; }
-      body.light #patent-card .metric-label { color: var(--muted) !important; }
+      body.light #patent-card .highlight-title {
+        color: #1a1510 !important;
+      }
+      body.light #patent-card .highlight-desc {
+        color: #6b5f52 !important;
+      }
+      body.light #patent-card .highlight-desc span {
+        color: #4e82d2 !important;
+      }
+      body.light #patent-card .metric-val {
+        color: #4e82d2 !important;
+      }
+      body.light #patent-card .metric-label {
+        color: #9a8f82 !important;
+      }
       body.light #patent-card .stack-tag {
-        color: #d94f4f !important;
-        border-color: rgba(217, 79, 79, 0.3) !important;
-        background: rgba(217, 79, 79, 0.05) !important;
+        color: #4e82d2 !important;
+        border-color: rgba(78, 130, 210, 0.3) !important;
+        background: rgba(78, 130, 210, 0.05) !important;
+      }
+      body.light #patent-card svg line,
+      body.light #patent-card svg rect,
+      body.light #patent-card svg ellipse,
+      body.light #patent-card svg circle {
+        stroke: #4e82d2 !important;
+      }
+      body.light #patent-card svg circle[fill="#4eb0f0"] {
+        fill: #4e82d2 !important;
       }
 
       /* ===================== */
       /* PUBLICATION CARD */
       /* ===================== */
+      
       body.light #publication-card {
-        background: linear-gradient(135deg, #fde8f3 0%, #f9deed 60%) !important;
-        border: 2px solid rgba(217, 79, 143, 0.5) !important;
+        background: linear-gradient(135deg, #f5edf8 0%, #ede4f2 60%) !important;
+        border: 2px solid rgba(155, 106, 191, 0.5) !important;
       }
       body.light #publication-card .highlight-tag {
-        color: #d94f8f !important;
-        border-color: rgba(217, 79, 143, 0.4) !important;
-        background: rgba(217, 79, 143, 0.08) !important;
+        color: #9b6abf !important;
+        border-color: rgba(155, 106, 191, 0.4) !important;
+        background: rgba(155, 106, 191, 0.08) !important;
       }
-      body.light #publication-card .highlight-title { color: var(--text) !important; }
-      body.light #publication-card .highlight-desc { color: var(--muted2) !important; }
-      body.light #publication-card .highlight-desc span { color: #d94f8f !important; }
-      body.light #publication-card .metric-val { color: #d94f8f !important; }
-      body.light #publication-card .metric-label { color: var(--muted) !important; }
-      body.light #publication-card a {
-        color: #d94f8f !important;
-        border-color: rgba(217, 79, 143, 0.4) !important;
-        background: rgba(217, 79, 143, 0.05) !important;
+      body.light #publication-card .highlight-title {
+        color: #1a1510 !important;
+      }
+      body.light #publication-card .highlight-desc {
+        color: #6b5f52 !important;
+      }
+      body.light #publication-card .highlight-desc span {
+        color: #9b6abf !important;
+      }
+      body.light #publication-card .metric-val {
+        color: #9b6abf !important;
+      }
+      body.light #publication-card .metric-label {
+        color: #9a8f82 !important;
       }
       body.light #publication-card .stack-tag {
-        color: #d94f8f !important;
-        border-color: rgba(217, 79, 143, 0.3) !important;
-        background: rgba(217, 79, 143, 0.05) !important;
+        color: #9b6abf !important;
+        border-color: rgba(155, 106, 191, 0.3) !important;
+        background: rgba(155, 106, 191, 0.05) !important;
+      }
+      body.light #publication-card a {
+        color: #9b6abf !important;
+        border-color: rgba(155, 106, 191, 0.4) !important;
+        background: rgba(155, 106, 191, 0.05) !important;
+      }
+      body.light #publication-card .section-num,
+      body.light #publication-card .exp-project,
+      body.light #publication-card .beyond-card-label,
+      body.light #publication-card .skill-cat {
+        color: #9b6abf !important;
+      }
+
+      /* General highlight tags — burnt orange for work cards */
+      body.light .highlight-tag {
+        color: var(--accent) !important;
+        border-color: rgba(196, 97, 42, 0.3) !important;
+        background: rgba(196, 97, 42, 0.06) !important;
+      }
+
+      /* Award card tags — sage green */
+      body.light #award-card .highlight-tag {
+        color: #728e62 !important;
+        border-color: rgba(114, 142, 98, 0.4) !important;
+        background: rgba(114, 142, 98, 0.08) !important;
+      }
+
+      /* Award tiles inside award card */
+      body.light #award-card > div > div[style] {
+        border-color: rgba(114, 142, 98, 0.3) !important;
+        background: rgba(114, 142, 98, 0.05) !important;
+      }
+
+      /* Patent card tag — pastel blue */
+      body.light #patent-card .highlight-tag {
+        color: #4e82d2 !important;
+        border-color: rgba(78, 130, 210, 0.4) !important;
+        background: rgba(78, 130, 210, 0.08) !important;
+      }
+
+      /* Publication card tag — lavender */
+      body.light #publication-card .highlight-tag {
+        color: #9b6abf !important;
+        border-color: rgba(155, 106, 191, 0.4) !important;
+        background: rgba(155, 106, 191, 0.08) !important;
       }
 
       /* Custom cursor */
@@ -700,12 +794,25 @@
         transition: all 0.2s;
         position: relative;
       }
-      .exp-tab::after {
+      /* .exp-tab::after {
         content: "";
         position: absolute;
         right: -33px;
         top: 50%;
         transform: translateY(-50%);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--border);
+        transition: background 0.2s;
+      } */
+
+      .exp-tab::after {
+        content: "";
+        position: absolute;
+        right: -32px;
+        top: 50%;
+        transform: translate(50%, -50%);
         width: 8px;
         height: 8px;
         border-radius: 50%;
@@ -1976,24 +2083,24 @@
             <span class="highlight-tag">Recognition · Persistent Systems</span>
             <div class="highlight-title">Awards & Recognition</div>
             <p class="highlight-desc">Consistently recognised at Persistent Systems for technical excellence, ownership, and team impact across multiple award categories over four years.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px;">
-              <div style="border: 1px solid rgba(200,240,78,0.2); padding: 10px 16px;">
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; background: transparent !important;">
+              <div style="border: 1px solid rgba(114,142,98,0.2); padding: 10px 16px;">
                 <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 2px;">Top Talent</div>
                 <div style="font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">2023 · 2024</div>
               </div>
-              <div style="border: 1px solid rgba(200,240,78,0.2); padding: 10px 16px;">
+              <div style="border: 1px solid rgba(114,142,98,0.2); padding: 10px 16px;">
                 <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 2px;">Bravo — Individual</div>
                 <div style="font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Sept 2022</div>
               </div>
-              <div style="border: 1px solid rgba(200,240,78,0.2); padding: 10px 16px;">
+              <div style="border: 1px solid rgba(114,142,98,0.2); padding: 10px 16px;">
                 <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 2px;">Bravo — Individual</div>
                 <div style="font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Jan 2023</div>
               </div>
-              <div style="border: 1px solid rgba(200,240,78,0.2); padding: 10px 16px;">
+              <div style="border: 1px solid rgba(114,142,98,0.2); padding: 10px 16px;">
                 <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 2px;">Bravo — Team</div>
                 <div style="font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Jan 2024</div>
               </div>
-              <div style="border: 1px solid rgba(200,240,78,0.2); padding: 10px 16px;">
+              <div style="border: 1px solid rgba(114,142,98,0.2); padding: 10px 16px;">
                 <div style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 2px;">High Five</div>
                 <div style="font-size: 10px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">July 2025</div>
               </div>
@@ -2001,47 +2108,88 @@
           </div>
           <div style="display: flex; flex-direction: column; gap: 16px; text-align: center;">
             <div>
-              <span style="font-family: 'DM Serif Display', serif; font-size: 40px; color: var(--accent); display: block; line-height: 1; margin-bottom: 6px;">6</span>
-              <span style="font-size: 10px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase;">Awards</span>
+              <span id="award-count" style="font-family: 'DM Serif Display', serif; font-size: 40px; color: var(--accent); display: block; line-height: 1; margin-bottom: 6px;">6</span>
+              <span id="award-count" style="font-size: 10px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase;">Awards</span>
             </div>
             <div>
-              <span style="font-family: 'DM Serif Display', serif; font-size: 40px; color: var(--accent); display: block; line-height: 1; margin-bottom: 6px;">4</span>
-              <span style="font-size: 10px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase;">Years</span>
+              <span id="award-years" style="font-family: 'DM Serif Display', serif; font-size: 40px; color: var(--accent); display: block; line-height: 1; margin-bottom: 6px;">4</span>
+              <span id="award-years" style="font-size: 10px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase;">Years</span>
             </div>
           </div>
         </div>
 
-        <div id="award-card" class="highlight-card" style="background: linear-gradient(135deg, #0a0f1a 0%, #111111 60%); border: 1px solid rgba(78, 176, 240, 0.2);">
-          <span class="highlight-tag" style="color: #4eb0f0; border-color: rgba(78,176,240,0.3);">Patent · Govt. of India · 2025</span>
-          <div class="highlight-title">360° Rotating Smart<br/>Drying Stand</div>
-          <p class="highlight-desc">A portable, weatherproof clothes drying stand featuring automated rain detection and 360° auto-rotation — engineered to protect laundry from weather without manual intervention. <span style="color: #4eb0f0;">Certified by The Patent Office, Government of India.</span></p>
-          <div class="highlight-metrics" style="margin-bottom: 24px;">
-            <div class="metric">
-              <span class="metric-val" style="font-size: 24px;">360°</span>
-              <span class="metric-label">Auto Rotation</span>
+        <div id="patent-card" class="highlight-card" style="background: linear-gradient(135deg, #0a0f1a 0%, #111111 60%); border: 1px solid rgba(78, 176, 240, 0.2); display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;">
+          <div>
+            <span class="highlight-tag" style="color: #4eb0f0; border-color: rgba(78,176,240,0.3);">Patent · Govt. of India · 2025</span>
+            <div class="highlight-title">360° Rotating Smart<br/>Drying Stand</div>
+            <p class="highlight-desc">A portable, weatherproof clothes drying stand featuring automated rain detection and 360° auto-rotation — engineered to protect laundry from weather without manual intervention. <span style="color: #4eb0f0;">Certified by The Patent Office, Government of India.</span></p>
+            <div class="highlight-metrics" style="margin-bottom: 24px;">
+              <div class="metric">
+                <span class="metric-val" style="font-size: 24px;">360°</span>
+                <span class="metric-label">Auto Rotation</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val" style="font-size: 24px;">IP</span>
+                <span class="metric-label">Protected</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val" style="font-size: 24px;">2025</span>
+                <span class="metric-label">Registered</span>
+              </div>
+              <div class="metric">
+                <span class="metric-val" style="font-size: 24px;">GOI</span>
+                <span class="metric-label">Certified</span>
+              </div>
             </div>
-            <div class="metric">
-              <span class="metric-val" style="font-size: 24px;">IP</span>
-              <span class="metric-label">Protected</span>
-            </div>
-            <div class="metric">
-              <span class="metric-val" style="font-size: 24px;">2025</span>
-              <span class="metric-label">Registered</span>
-            </div>
-            <div class="metric">
-              <span class="metric-val" style="font-size: 24px;">GOI</span>
-              <span class="metric-label">Certified</span>
+            <div class="highlight-stack">
+              <span class="stack-tag">IoT</span>
+              <span class="stack-tag">Embedded Systems</span>
+              <span class="stack-tag">Rain Detection</span>
+              <span class="stack-tag">Automation</span>
             </div>
           </div>
-          <div class="highlight-stack">
-            <span class="stack-tag">IoT</span>
-            <span class="stack-tag">Embedded Systems</span>
-            <span class="stack-tag">Rain Detection</span>
-            <span class="stack-tag">Automation</span>
+        
+          <!-- Rotating stand animation -->
+          <div style="width: 180px; height: 220px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg viewBox="0 0 120 180" width="120" height="180" xmlns="http://www.w3.org/2000/svg">
+
+              <!-- Base -->
+              <ellipse cx="60" cy="168" rx="18" ry="5" fill="none" stroke="#4eb0f0" stroke-width="1.5" opacity="0.6"/>
+            
+              <!-- Pole -->
+              <line x1="60" y1="163" x2="60" y2="55" stroke="#4eb0f0" stroke-width="2.5" opacity="0.8"/>
+            
+              <!-- Motor box -->
+              <rect x="53" y="88" width="14" height="14" rx="2" fill="none" stroke="#4eb0f0" stroke-width="1.5" opacity="0.9"/>
+              <circle cx="60" cy="95" r="3" fill="#4eb0f0" opacity="0.9"/>
+            
+              <!-- Motor glow -->
+              <circle cx="60" cy="95" r="8" fill="#4eb0f0" opacity="0.06">
+                <animate attributeName="opacity" values="0.06;0.14;0.06" dur="2s" repeatCount="indefinite"/>
+              </circle>
+            
+              <!-- Rack mount point at top of pole -->
+              <circle cx="60" cy="55" r="3" fill="#4eb0f0" opacity="0.7"/>
+            
+              <!-- Rotating rack — scaleY to fake Z-axis perspective -->
+              <g transform="translate(60, 55) scale(1, 0.3)">
+                <g>
+                  <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
+                  <!-- Rack outer frame -->
+                  <rect x="-34" y="-12" width="68" height="24" rx="1" fill="none" stroke="#4eb0f0" stroke-width="2" opacity="0.95"/>
+                  <!-- Rack bars -->
+                  <line x1="-22" y1="-12" x2="-22" y2="12" stroke="#4eb0f0" stroke-width="1.2" opacity="0.8"/>
+                  <line x1="-8"  y1="-12" x2="-8"  y2="12" stroke="#4eb0f0" stroke-width="1.2" opacity="0.8"/>
+                  <line x1="6"   y1="-12" x2="6"   y2="12" stroke="#4eb0f0" stroke-width="1.2" opacity="0.8"/>
+                  <line x1="20"  y1="-12" x2="20"  y2="12" stroke="#4eb0f0" stroke-width="1.2" opacity="0.8"/>
+                </g>
+              </g>
+            
+            </svg>
           </div>
         </div>
 
-        <div id="award-card" class="highlight-card" style="background: linear-gradient(135deg, #0f0a1a 0%, #111111 60%); border: 1px solid rgba(176, 78, 240, 0.2);">
+        <div id="publication-card" class="highlight-card" style="background: linear-gradient(135deg, #0f0a1a 0%, #111111 60%); border: 1px solid rgba(176, 78, 240, 0.2);">
           <span class="highlight-tag" style="color: #b04ef0; border-color: rgba(176,78,240,0.3);">Research Publication · 2018</span>
           <div class="highlight-title">Secret Image Sharing Over Cloud Using One-Dimensional Chaotic Map</div>
           <p class="highlight-desc">Published in <span style="color: #b04ef0;">Data, Engineering and Applications — Volume 2</span> (Springer), a compilation of current trends, technologies, and challenges in Big Data. The paper presents a cryptographic approach to secure image sharing over cloud infrastructure using chaotic map theory.</p>
